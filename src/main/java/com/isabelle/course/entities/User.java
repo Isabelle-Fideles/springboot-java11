@@ -3,10 +3,19 @@ package com.isabelle.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id //indicando q eh a chave primaria
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //auto incrementavel
 	private Long id;
 	private String name;
 	private String email;
